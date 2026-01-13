@@ -1,0 +1,28 @@
+name: CI/CD Pipeline
+
+
+on:
+push:
+branches: [ main ]
+
+
+jobs:
+build-test-deploy:
+runs-on: ubuntu-latest
+
+
+steps:
+- name: Checkout Code
+uses: actions/checkout@v4
+
+
+- name: Build Step
+run: echo "Build successful"
+
+
+- name: Test Step
+run: bash test.sh
+
+
+- name: Deploy Step
+run: echo "Ready for deployment"
